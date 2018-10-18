@@ -4,6 +4,9 @@ import Upload from "./pages/Upload";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import View from "./pages/View";
+import Share from "./pages/Share";
+
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import React, { Component } from 'react';
@@ -96,6 +99,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Books} />
             <Route exact path="/upload" component={Upload} />
+            <Route exact path="/view" component={View} />
+            <Route exact path="/share" component={Share} />
             <Route exact path="/login" render={() => {
               if (loggedIn) {
                 return <Redirect to="/home" />
