@@ -1,7 +1,6 @@
 // import React from "react";
-import Books from "./pages/Books";
+import Landing from "./pages/Landing";
 import Upload from "./pages/Upload";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import View from "./pages/View";
@@ -95,12 +94,15 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          <Nav handleLogout = {this.handleLogout} />
           <Switch>
-            <Route exact path="/" component={Books} />
-            <Route exact path="/upload" component={Upload} />
-            <Route exact path="/view" component={View} />
-            <Route exact path="/share" component={Share} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/upload"  render={() => {
+              return <Upload auth={this.state.auth} />
+            }} />
+            <Route exact path="/view" render={() => {
+              return <View auth={this.state.auth} />
+            }} />
             <Route exact path="/login" render={() => {
               if (loggedIn) {
                 return <Redirect to="/home" />
@@ -127,7 +129,7 @@ class App extends Component {
             }} />
             <Route exact path="/home" render={() => {
               if (!loggedIn) {
-                return <Redirect to="/" />
+                return <Redirect to="/login" />
               } else {
                 return <Home handleLogout={this.handleLogout} auth={this.state.auth} />
               }

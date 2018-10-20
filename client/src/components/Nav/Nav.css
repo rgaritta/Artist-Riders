@@ -1,0 +1,25 @@
+.nav {
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .nav-link {
+    color: white;
+  }
+  
+  .navbar {
+    background-color: rgb(173, 117, 173);
+    margin: 0;
+    height: 55px;
+  }
+  
+  .navbar a {
+    color: white;
+  }
+
+  ul {
+      float: right;
+  }
+  
+  
+  

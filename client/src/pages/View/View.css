@@ -1,9 +1,9 @@
-.sign-in {
+.viewdiv {
     border: 1px solid black;
-    width: 400px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 2%;
     padding: 2%;
     background-color: white;
   }
@@ -11,3 +11,5 @@
   .button{
     margin-top: 10px;
   }
+
+  
